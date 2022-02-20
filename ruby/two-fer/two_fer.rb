@@ -5,3 +5,13 @@ Write your code for the 'Two Fer' exercise in this file. Make the tests in
 To get started with TDD, see the `README.md` file in your
 `ruby/two-fer` directory.
 =end
+
+class TwoFer
+  def self.two_fer(name = "")
+    if !name.empty?
+      "One for #{name}, one for me."
+    else
+      "One for you, one for me."
+    end
+  end
+end
