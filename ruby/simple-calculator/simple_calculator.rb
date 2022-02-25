@@ -1,7 +1,19 @@
 class SimpleCalculator
   ALLOWED_OPERATIONS = ['+', '/', '*'].freeze
 
+  
   def self.calculate(first_operand, second_operand, operation)
-    raise 'Please implement the SimpleCalculator.calculate method'
+    raise UnsupportedOperation unless ALLOWED_OPERATIONS.include?(operation)
+      "#{first_operand} #{operation} #{second_operand} = #{first_operand.send(operation, second_operand)}"
+
+    rescue ZeroDivisionError
+      'Division by zero is not allowed.'
+
+    rescue TypeError
+      
+    raise ArgumentError
+  end
+
+  class UnsupportedOperation < StandardError 
   end
 end
